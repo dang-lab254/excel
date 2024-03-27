@@ -591,7 +591,7 @@ class Parser {
         if (sharedString == null) {
           value = TextCellValue("");
         } else {
-          // value = TextCellValue(sharedString.stringValue);
+          value = TextCellValue(sharedString.stringValue);
         }
         break;
       // boolean
