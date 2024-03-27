@@ -589,12 +589,12 @@ class Parser {
         final sharedString = _excel._sharedStrings
             .value(int.parse(_parseValue(node.findElements('v').first)));
         if (sharedString == null) {
-          debug(node.findElements);
-          debug(node.findElements('v').first);
+          print(node.findElements);
+          print(node.findElements('v').first);
           value = TextCellValue("에러");
         } else {
-          debug(node.findElements);
-          debug(node.findElements('v').first);
+          print(node.findElements);
+          print(node.findElements('v').first);
           value = TextCellValue(sharedString.stringValue);
         }
         break;
