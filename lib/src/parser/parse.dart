@@ -588,9 +588,8 @@ class Parser {
       case 's':
         final sharedString = _excel._sharedStrings
             .value(int.parse(_parseValue(node.findElements('v').first)));
+        print(node);
         if (sharedString == null) {
-          print('에러 위치');
-          print(node.findElements('v').first);
           value = TextCellValue("에러");
         } else {
           value = TextCellValue(sharedString.stringValue);
