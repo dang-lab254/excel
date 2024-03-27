@@ -588,7 +588,7 @@ class Parser {
       case 's':
         final sharedString = _excel._sharedStrings
             .value(int.parse(_parseValue(node.findElements('v').first)));
-        print(_excel._sharedStrings.value(16));
+        print(_excel._sharedStrings.value(16)!.stringValue);
         if (sharedString == null) {
           value = TextCellValue("에러");
         } else {
