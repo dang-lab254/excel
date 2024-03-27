@@ -586,13 +586,13 @@ class Parser {
     switch (type) {
       // sharedString
       case 's':
-        final sharedString = _excel._sharedStrings
-            .value(int.parse(_parseValue(node.findElements('v').first)));
-        if (sharedString == null) {
-          value = TextCellValue("");
-        } else {
-          value = TextCellValue(sharedString!.stringValue);
-        }
+        // final sharedString = _excel._sharedStrings
+        //     .value(int.parse(_parseValue(node.findElements('v').first)));
+        // if (sharedString == null) {
+        value = TextCellValue("");
+        // } else {
+        // value = TextCellValue(sharedString.stringValue);
+        // }
         break;
       // boolean
       case 'b':
