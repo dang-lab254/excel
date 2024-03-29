@@ -551,7 +551,11 @@ class Parser {
     if (rowIndex < 0) {
       return;
     }
-    print(name);
+    for (final row in sheetObject.rows) {
+      if (row.first != null) {
+        print(row.first!._value);
+      }
+    }
     _findCells(node).forEach((child) {
       _parseCell(child, sheetObject, rowIndex, name);
     });
