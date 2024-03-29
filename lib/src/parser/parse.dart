@@ -551,11 +551,6 @@ class Parser {
     if (rowIndex < 0) {
       return;
     }
-    for (final row in sheetObject.rows) {
-      if (row.first != null) {
-        print(row.first!._value);
-      }
-    }
     _findCells(node).forEach((child) {
       _parseCell(child, sheetObject, rowIndex, name);
     });
@@ -592,9 +587,12 @@ class Parser {
       case 's':
         final sharedString = _excel._sharedStrings
             .value(int.parse(_parseValue(node.findElements('v').first)));
+
         if (sharedString == null) {
           value = TextCellValue("에러");
         } else {
+          print(
+              '${node.findElements('v').first} + ${sharedString.stringValue}');
           value = TextCellValue(sharedString.stringValue);
         }
         break;
