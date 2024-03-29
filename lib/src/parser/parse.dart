@@ -551,7 +551,7 @@ class Parser {
     if (rowIndex < 0) {
       return;
     }
-
+    print(name);
     _findCells(node).forEach((child) {
       _parseCell(child, sheetObject, rowIndex, name);
     });
@@ -588,7 +588,6 @@ class Parser {
       case 's':
         final sharedString = _excel._sharedStrings
             .value(int.parse(_parseValue(node.findElements('v').first)));
-        print(_excel._sharedStrings._list);
         if (sharedString == null) {
           value = TextCellValue("에러");
         } else {
